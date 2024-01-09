@@ -13,17 +13,17 @@ body {
     overflow: hidden;
 }
 
-img {
-    width: 100%;
-    transition: all 0.5s;
+.container img {
+	width: 100%;
+	transition: all .5s;
 }
 
 .caption {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 30%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,7 +31,7 @@ img {
     color: white;
     transition: all 0.5s;
     background-color: black;
-    transform: translateY(-100%);
+    transform: translateY(100%);
 }
 
 .caption h1 {
@@ -49,5 +49,5 @@ img {
 }
 
 .container:hover img {
-    transform: translateY(100%);
+    transform: translateY(-30%);
 }
