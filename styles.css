@@ -1,53 +1,80 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
 body {
+  margin: 0;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Lato", sans-serif;
+  background-color: #212121;
 }
 
-.container {
-    width: 500px;
-    height: 500px;
-    position: relative;
-    overflow: hidden;
+.fig {
+  width: 500px;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
 }
 
-.container img {
-	width: 100%;
-	transition: all .5s;
+.fig img {
+  width: 100%;
 }
 
-.caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    transition: all 0.5s;
-    background-color: black;
-    transform: translateY(100%);
+.fig::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #006266;
+  opacity: 0.5;
+  transform: translateY(100%);
+  transition: all 0.25s;
+  transition-delay: 0.25s;
 }
 
-.caption h1 {
-    text-transform: uppercase;
-    margin: 0;
+.fig:hover::before {
+  transform: translateY(0);
+  transition-delay: 0s;
 }
 
-.caption p{
-    text-transform: capitalize;
-    font-size: 18px;
+.fig .caption {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.25s ease;
 }
 
-.container:hover .caption {
-    transform: translateY(0);
+.fig:hover .caption {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 0.3s;
 }
 
-.container:hover img {
-    transform: translateY(-30%);
+.fig h3,
+.fig h5 {
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.fig h3 {
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.fig h5 {
+  background-color: #ae895d;
+  padding: 3px 10px;
 }
