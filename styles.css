@@ -100,35 +100,59 @@ img {
   }
 
   
-/* OUR EFFECT STYLES GOES HERE */
-.container:before {
+/* hovering effect goes here */
+.container {
+  background-color: #444;
+  border: 10px solid white;
+  overflow: hidden;
+}
+
+img {
+  transition: all 0.5s;
+}
+
+.container:hover img {
+  transform: rotate(720deg) scale(0);
   opacity: 0;
-  transition: all 0.3s;
+}
+
+.container:before {
+  background-color: #006266;
+  opacity: 0;
+  transition: all 0.3s; 
 }
 
 .container:hover:before {
   opacity: 1;
-}
-
-h2, p {
-  transform: scale(10);
-  opacity: 0;
-  transition: all 0.3s;
-}
-
-.container:hover h2,
-.container:hover p {
-  opacity: 1;
-  transform: scale(1);
-  transition-delay: 0.2s;
+  transition-delay: 0.5s;
 }
 
 a {
-  transform: translateY(150px);
-  transition: all 0.3s;
+  transform: translateY(-300px);
+  transition: all 0.2s;
 }
 
 .container:hover a {
   transform: translateY(0);
-  transition-delay: 0.2s;
+  transition-delay: 0.5s;
+}
+
+p {
+  transform: translateY(-300px);
+  transition: all 0.2s;
+}
+
+.container:hover p {
+  transform: translateY(0);
+  transition-delay: 0.7s;
+}
+
+h2 {
+  transform: translateY(-300px);
+  transition: all 0.2s;
+}
+
+.container:hover h2 {
+  transform: translateY(0);
+  transition-delay: 0.9s;
 }
