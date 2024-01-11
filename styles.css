@@ -100,48 +100,43 @@ img {
   }
 
   
-/* OUR EFFECT STYLES GOES HERE */
-
-.container:before {
-  transform: translate(650px, -100px) rotate(180deg);
-  transition: all 0.2s;
+/* EFFECTS STYLES GOES HERE */
+.container {
+  background-color: #444;
+  border: 10px solid white;
 }
 
-.container:hover:before {
-  transform: translate(0, 0) rotate(0deg);
-}
-
-h2 {
-  transform: translateY(-150px);
-  transition: all 0.2s;
-}
-
-.container:hover h2 {
-  transform: translateY(0px);
+img {
+  transition: all 0.5s;
   transition-delay: 0.5s;
 }
 
-
-p {
-  transform: translateX(300px) rotate(90deg);
-  transition: all 0.2s;
+.container:hover img {
+  transform: scale(0);
+  transition-delay: 0s;
 }
 
-.container:hover p {
-  transform: translateX(0) rotate(0deg);
-  transition-delay: 0.4s;
+.container:before {
+  background-color: #006266;
+  transform: scale(0) rotate(-180deg);
+  transition: all 0.5s;
 }
 
+.container:hover:before {
+  transform: scale(1) rotate(0deg);
+  transition-delay: 0.5s;
+}
+
+h2,
+p,
 a {
-  transform: translateY(-300px);
-  transition: all 0.2s;
+  opacity: 0;
+  transition: all 0.5s;
 }
 
+.container:hover h2,
+.container:hover p,
 .container:hover a {
-  transform: translateY(0px);
-  transition-delay: 0.3s;
-}
-
-.container {
-  overflow: hidden;
+  opacity: 1;
+  transition-delay: 1s;
 }
